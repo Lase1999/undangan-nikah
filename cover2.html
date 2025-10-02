@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cover Dua - Penerimaan Tamu</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #f1f5f9 60%, #e0e7ff 100%);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .cover-container {
+            background: #fff;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            border-radius: 16px;
+            padding: 40px 32px;
+            text-align: center;
+            max-width: 400px;
+        }
+        .cover-title {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #16a34a;
+            margin-bottom: 12px;
+        }
+        .cover-subtitle {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 24px;
+        }
+        .tamu {
+            font-size: 1.3rem;
+            color: #334155;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+        .btn-link {
+            display: inline-block;
+            background: #16a34a;
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s;
+            margin-top: 8px;
+        }
+        .btn-link:hover {
+            background: #166534;
+        }
+    </style>
+</head>
+<body>
+    <div class="cover-container">
+        <div class="cover-title">Penerimaan Tamu</div>
+        <div class="cover-subtitle">Kepada yang terhormat:</div>
+        <div class="tamu" id="namaTamu">Tamu Undangan</div>
+        <a href="index.html" class="btn-link">Lanjut ke Acara Utama</a>
+    </div>
+    <script>
+        // Ambil nama tamu dari parameter URL
+        function getNamaTamu() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('nama') || 'Tamu Undangan';
+        }
+        document.getElementById('namaTamu').textContent = getNamaTamu();
+    </script>
+</body>
+</html>

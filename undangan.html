@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cover Undangan Acara</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 60%, #e0e7ff 100%);
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .cover-container {
+            background: #fff;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            border-radius: 16px;
+            padding: 40px 32px;
+            text-align: center;
+            max-width: 400px;
+        }
+        .cover-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #3b82f6;
+            margin-bottom: 12px;
+        }
+        .cover-subtitle {
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 24px;
+        }
+        .input-group {
+            margin-bottom: 24px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            width: 80%;
+            font-size: 1rem;
+        }
+        .btn-link {
+            display: inline-block;
+            background: #3b82f6;
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.2s;
+            margin-top: 8px;
+        }
+        .btn-link:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="cover-container">
+        <div class="cover-title">Undangan Acara</div>
+        <div class="cover-subtitle">Kepada Yth. Tamu Undangan</div>
+        <form id="tamuForm" onsubmit="return goToAcara();">
+            <div class="input-group">
+                <input type="text" id="namaTamu" name="namaTamu" placeholder="Masukkan nama Anda" required>
+            </div>
+            <a href="#" class="btn-link" onclick="return goToAcara();">Buka Acara</a>
+        </form>
+    </div>
+    <script>
+        function goToAcara() {
+            var nama = document.getElementById('namaTamu').value.trim();
+            if(nama) {
+                // Link otomatis ke cover2.html dengan parameter nama
+                window.location.href = 'cover2.html?nama=' + encodeURIComponent(nama);
+            }
+            return false;
+        }
+    </script>
+</body>
+</html>
